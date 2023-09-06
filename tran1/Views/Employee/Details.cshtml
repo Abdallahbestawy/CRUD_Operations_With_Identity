@@ -1,0 +1,62 @@
+﻿@model EmployeeViewModel
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/profile.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Roboto+Slab:wght@300&display=swap"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    <title>Student Profile</title>
+</head>
+<body>
+
+
+    <div class="main">
+        <div class="container">
+            <img src="~/@Model.EmployeePicture" alt="" class="profile-img">
+            <h3> @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
+            <form action="" id="editable">
+                <div class="row info">
+                    <h4 class="col-3">@Html.DisplayNameFor(model => model.Email)</h4>
+                    <input asp-for="Email" type="email" class="col-3 inputs" placeholder="">
+                </div>
+                  <div class="row info">
+                    <h4 class="col-3">@Html.DisplayNameFor(model => model.NationalID)</h4>
+                    <input asp-for="NationalID" type="email" class="col-3 inputs" placeholder="">
+                </div>
+                  <div class="row info">
+                    <h4 class="col-3">@Html.DisplayNameFor(model => model.Mobile)</h4>
+                    <input asp-for="Mobile" type="email" class="col-3 inputs" placeholder="">
+                </div>
+                <div class="row info">
+                    <h4 class="col-3"> Department Name</h4>
+                    <input type="text" class="col-3" placeholder="" value="@Html.DisplayFor(model =>  model.Departments.Name)">
+                </div>
+
+            </form>
+           @* <button class="saveEdits" type="submit">Save</button>*@
+           @* <button class="saveEdits" type="submit" onclick="Index()">Back</button>*@
+            <a asp-action="Index" class="saveEdits">Back</a>
+
+
+        </div>
+    </div>
+
+
+    <script src="~/js/Profile.js"></script>
+</body>
